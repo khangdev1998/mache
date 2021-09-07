@@ -1,0 +1,109 @@
+.prices {
+  --height-data: 152px;
+  background: $bg-gray;
+  padding: 144px 0;
+  &-list {
+    padding-top: 84px;
+    @include flexbox((
+      justify-content: space-between
+    ));
+  }
+  &-list__items {
+    width: calc(25% - 22.5px);
+    background-color: $color-light;
+    cursor: pointer;
+    &:hover {
+      .prices-list__number {
+        background-color: $color-primary;
+      }
+    }
+  }
+  &-list__number {
+    word-break: break-all;
+    background-color: $color-dark;
+    min-height: var(--height-data);
+    color: $color-light;
+    font-size: 20px;
+    position: relative;
+    transition: all ease-in-out 0.28s;
+    @include flexbox((
+      justify-content: center,
+      align-items: center,
+      flex-direction: column
+    ));
+  }
+  &-list__total {
+    padding-bottom: 5px;
+    &:first-child {
+      font-size: 20px;
+    }
+    &:last-child {
+      font-size: 50px;
+    }
+  }
+  &-list__month {
+    font-size: 15px;
+  }
+  &--btn {
+    position: absolute;
+    bottom: -25px;
+    background-color: $bg-gray;
+    color: $color-dark;
+  }
+  &-list__data {
+    height: calc(100% - var(--height-data));
+    @include flexbox((
+      flex-direction: column,
+      justify-content: space-between,
+
+    ));
+    word-break: break-all;
+    text-align: center;
+    padding: 50px 31px 35px;
+    span {
+      font-size: 15px;
+      font-weight: 500;
+      color: $color-dark;
+      line-height: 2.5;
+      display: block;
+      &:last-of-type {
+        margin-bottom: 34px;
+      }
+    }
+  }
+  @include maxWidth(1279px) {
+    padding: 80px 0;
+    &-list {
+      padding-top: 60px;
+      margin-bottom: -50px;
+      @include flexbox((
+        flex-wrap: wrap,
+        justify-content: space-between
+      ));
+    }
+    &-list__items {
+      width: calc(50% - 20px);
+      margin-bottom: 50px;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding: 60px 0;
+    &-list {
+      padding-top: 50px;
+    }
+  }
+  @include maxWidth(767px) {
+    &-list {
+      @include scrollsnap(90%, 15px, none);
+    }
+    &-list__items {
+      width: 100%;
+    }
+  }
+  @include maxWidth(374px) {
+    &-list {
+      @include scrollsnap(100%, 10px, none);
+    }
+  }
+}
+

@@ -1,0 +1,112 @@
+.category {
+  padding: 144px 0;
+  &__container {
+    margin-bottom: -75px;
+    @include flexbox((
+      justify-content: space-between,
+      flex-wrap: wrap
+    ));
+  }
+  &-items {
+    width: calc(33.3333% - 20px);
+    margin-bottom: 75px;
+    @include flexbox((
+      justify-content: flex-start,
+      align-items: flex-start
+    ));
+  }
+  &-items__image {
+    object-fit: cover;
+    transform: translateY(8px);
+  }
+  &-content {
+    padding-left: 24px;
+    line-height: 1.8;
+    font-size: 15px;
+    height: 100%;
+    @include flexbox((
+      justify-content: space-between,
+      flex-direction: column
+    ));
+  }
+  &-content__title {
+    font-size: inherit;
+    font-weight: bold;
+    color: $color-primary;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    @include lineClamp(2);
+  }
+  &-content__desc {
+    color: $color-dark;
+    font-weight: 300;
+    @include lineClamp(3);
+  }
+  @include maxWidth(1023px) {
+    padding: 80px 0;
+    &-items {
+      width: calc(50% - 20px);
+    }
+  }
+  @include maxWidth(767px) {
+    padding: 60px 0;
+    &__container {
+      display: block;
+      margin-bottom: -75px;
+    }
+    &-items {
+      width: 100%;
+    }
+  }
+}
+
+.join {
+  background-color: $color-primary;
+  padding: 75px 0;
+  &__container {
+    text-align: center;
+    color: $color-light;
+    margin: 0 auto;
+    @include flexbox((
+      justify-content: space-between,
+      align-items: center
+    ));
+  }
+  &__title {
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-size: 38px;
+    font-weight: 300;
+    span {
+      font-weight: bold;
+    }
+  }
+  &--btn {
+    padding: 20px 70px;
+    border-radius: 29px;
+  }
+  @include maxWidth(1279px) {
+    &__title {
+      font-size: 28px;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding: 50px 0;
+    &__container {
+      @include flexbox((
+        flex-direction: column,
+        align-items: center
+      ))
+    }
+    &__title {
+      margin-bottom: 40px;
+    }
+  }
+  @include maxWidth(424px) {
+    padding: 40px 0;
+    &__title {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+  }
+}

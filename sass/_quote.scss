@@ -1,0 +1,44 @@
+.quote {
+  background: url("../images/quote-bg.png") no-repeat center / cover;
+  padding: 100px 0;
+  &__container {
+    color: #878787;
+    @include flexbox((
+      justify-content: space-between,
+      align-items: center
+    ))
+  }
+  &__icon {
+    font-size: 40px;
+    cursor: pointer;
+    &--left {
+      transform: translateX(-60px);
+    }
+    &--right {
+      transform: translateX(60px);
+    }
+  }
+  &-content {
+    text-align: center;
+    margin: auto;
+  }
+  &-content__desc {
+    padding: 44px 0;
+    font-size: 25px;
+    font-style: italic;
+    line-height: 2;
+    max-width: 834px;
+    color: $color-light;
+    font-weight: 300;
+  }
+  @include maxWidth(1279px) {
+    &__icon {
+      display: none !important;
+    }
+  }
+  @include maxWidth(1023px) {
+    &-content__desc {
+      font-size: 18px;
+    }
+  }
+}
