@@ -140,6 +140,9 @@
   &__content {
     margin-top: 0;
   }
+  @include maxWidth(1024px) {
+    background-attachment: unset;
+  }
   @include maxWidth(767px) {
     padding: 100px 0;
   }
